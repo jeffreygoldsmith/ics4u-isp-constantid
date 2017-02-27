@@ -78,3 +78,9 @@ This program will verify the user based on their typing profile. Creating the ty
 
 The rough idea I have now ist that program builds the typing profile by averaging the time delta between keystrokes. I believe that there is a more accurate way to do this other than averaging, but more comprehensive research will be required to find or think of a specific way to better handle this problem, which I will do as one of my early deliverables.
 
+- Collect the keystroke times for each word in the string the user types, and compute the first difference of the times between each keystroke.
+
+- Store these times in a dictionary based on keystroke pattern (ex: 'a'-'e' : keystrokeTiming)
+ 
+- If any difference value exceeds a threshold td, or if the standard deviation of the keystroke timings exceeds a threshold ts, or if they keystroke timings are overly deviant, decide that the user is not verified.
+
