@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0014AA321E5F70C500A8CFF5 /* KeyTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0014AA311E5F70C500A8CFF5 /* KeyTracking.swift */; };
 		006A18291E51F779004E66C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A18281E51F779004E66C6 /* AppDelegate.swift */; };
 		006A182B1E51F779004E66C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A182A1E51F779004E66C6 /* ViewController.swift */; };
 		006A182D1E51F779004E66C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006A182C1E51F779004E66C6 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0014AA311E5F70C500A8CFF5 /* KeyTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyTracking.swift; sourceTree = "<group>"; };
 		006A18251E51F779004E66C6 /* constantId.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = constantId.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		006A18281E51F779004E66C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		006A182A1E51F779004E66C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				006A18281E51F779004E66C6 /* AppDelegate.swift */,
+				0014AA311E5F70C500A8CFF5 /* KeyTracking.swift */,
 				006A182A1E51F779004E66C6 /* ViewController.swift */,
 				006A182C1E51F779004E66C6 /* Assets.xcassets */,
 				006A182E1E51F779004E66C6 /* Main.storyboard */,
@@ -256,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				006A182B1E51F779004E66C6 /* ViewController.swift in Sources */,
+				0014AA321E5F70C500A8CFF5 /* KeyTracking.swift in Sources */,
 				006A18291E51F779004E66C6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +500,7 @@
 				006A184C1E51F779004E66C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		006A184D1E51F779004E66C6 /* Build configuration list for PBXNativeTarget "constantIdTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +509,7 @@
 				006A184F1E51F779004E66C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		006A18501E51F779004E66C6 /* Build configuration list for PBXNativeTarget "constantIdUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +518,7 @@
 				006A18521E51F779004E66C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
