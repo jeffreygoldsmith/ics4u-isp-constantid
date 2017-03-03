@@ -21,25 +21,51 @@ struct LetterPattern
     }
 }
 
-let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "space" ]
-var keyDictionary : [String : LetterPattern] = [:]
+var alphabet : [String] = []
 
 class KeyTiming
 {
-    init()
+    var keyDictionary : [String : LetterPattern] = [:]
+    
+    init() {}
+    
+    func Initialize()
     {
         print("Initializing")
+        
+        for i in 97...122
+        {
+            let letter = UnicodeScalar(i)!
+            alphabet.append(String(letter))
+            alphabet.append(String(letter).uppercased())
+        }
+        
+        alphabet.append("enter")
+        alphabet.append("space")
+        
+        let newLetterPattern = LetterPattern(average: 0, count: 0)
+        
         for firstLetter in alphabet
         {
-            for secondLetter in alphabet
+            if (firstLetter != "space" && firstLetter != "enter")
             {
-                let newLetterPattern = LetterPattern(average: 0, count: 0)
-                keyDictionary["\(firstLetter)-\(secondLetter)"] = newLetterPattern
+                for secondLetter in alphabet
+                {
+                    keyDictionary["\(firstLetter)-\(secondLetter)"] = newLetterPattern
+                    keyDictionary["\(firstLetter.uppercased())-\(secondLetter)"] = newLetterPattern
+                    
+                    if (keyDictionary["\(firstLetter.uppercased())-\(secondLetter.uppercased())"] != nil)
+                    {
+                    
+                    } else {
+                        keyDictionary["\(firstLetter.uppercased())-\(secondLetter.uppercased())"] = newLetterPattern
+                    }
+                }
             }
         }
+        print(keyDictionary)
         print(keyDictionary.count)
     }
-    
     
     //
     // Function to parce keyDictionary to get the old average and count values.
@@ -70,17 +96,8 @@ class KeyTiming
     //
     func setNewLetterPattern(event: NSEvent, timingArray: [Keystroke])
     {
-        for i in 0...timingArray.count - 1 // Iterate through the array of key presses
+        for i in 0...timingArray.count - 2 // Iterate through the array of key presses
         {
-            if (i == timingArray.count - 1)
-            {
-                let letterPattern = "\(timingArray[i].letter)-space)"
-                let newLetterPattern = getNewLetterPattern(letterPattern: letterPattern, initialTimestamp: timingArray[i].timestamp, finalTimestamp: event.timestamp)
-                keyDictionary[letterPattern] = newLetterPattern
-                
-                break
-            }
-            
             let letterPattern = "\(timingArray[i].letter)-\(timingArray[i + 1].letter)"
             let newLetterPattern = getNewLetterPattern(letterPattern: letterPattern, initialTimestamp: timingArray[i].timestamp, finalTimestamp: timingArray[i + 1].timestamp)
             keyDictionary[letterPattern] = newLetterPattern

@@ -22,7 +22,6 @@ struct Keystroke
 }
 
 var timingArray : [Keystroke] = []
-var KeyDictionary = KeyTiming()
 
 class KeyTracking: NSWindow
 {
@@ -31,16 +30,45 @@ class KeyTracking: NSWindow
     //
     override func keyDown(with event: NSEvent)
     {
-        if (event.keyCode == 49 && timingArray.count >= 1) // When space is pressed:
+        // Ensure that the first character is not an enter or a space
+        if (timingArray.count == 0)
         {
-            KeyDictionary.setNewLetterPattern(event: event, timingArray: timingArray)
-            
-            timingArray = [] // Clean the array
-            
-            return
+            if (event.keyCode == 49 || event.keyCode == 36)
+            {
+                return
+            }
         }
         
-        let currentKeystroke = Keystroke(letter: event.characters!, timestamp: event.timestamp) // Create a new keystroke variable
-        timingArray.append(currentKeystroke) // Add it to the array
+        // If the character typed is one that we care about...
+        if ((alphabet.filter{$0 == event.characters!}.first) != nil || event.keyCode == 49 || event.keyCode == 36)
+        {
+            var letter = ""
+            switch event.keyCode {
+            case 49:
+                letter = "space"
+            case 36:
+                letter = "enter"
+            default:
+                letter = event.characters!
+            }
+            
+            let currentKeystroke = Keystroke(letter: letter, timestamp: event.timestamp) // Create a new keystroke variable
+            timingArray.append(currentKeystroke) // Add it to the array
+        }
+        
+        // When space or enter is pressed:
+        if (event.keyCode == 49 || event.keyCode == 36)
+        {
+            // if we also have a full set of data
+            if (timingArray.count >= 2)
+            {
+                Swift.print(timingArray)
+                KeyTracker.setNewLetterPattern(event: event, timingArray: timingArray)
+                
+                timingArray = [] // Clean the array
+                
+                return
+            }
+        }
     }
 }

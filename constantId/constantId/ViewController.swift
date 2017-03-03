@@ -8,12 +8,16 @@
 
 import Cocoa
 
+var KeyTracker = KeyTiming()
+
 class ViewController: NSViewController
 {    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        KeyTracker.Initialize()
     }
 
     override var representedObject: Any?
