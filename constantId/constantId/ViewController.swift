@@ -11,7 +11,7 @@ import Cocoa
 var KeyTracker = KeyTiming()
 
 class ViewController: NSViewController
-{    
+{
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -19,9 +19,9 @@ class ViewController: NSViewController
         
         KeyTracker.Initialize()
     }
-
+    
     override var representedObject: Any?
-    {
+        {
         didSet
         {
             // Update the view, if already loaded.
@@ -32,10 +32,17 @@ class ViewController: NSViewController
     {
         if self.view.layer != nil
         {
-            let color : CGColor = CGColor(red: 0.35, green: 0.38, blue: 0.44, alpha: 1.0)
-            self.view.layer?.backgroundColor = color
+            let charcoal : CGColor = CGColor(red: 0.35, green: 0.38, blue: 0.44, alpha: 1.0)
+            self.view.layer?.backgroundColor = charcoal
         }
         
     }
     
+    @IBAction func Reset(_ sender: Any)
+    {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("nextView") as NextViewController
+        self.presentViewController(nextViewController, animated:true, completion:nil)
+    }
 }
