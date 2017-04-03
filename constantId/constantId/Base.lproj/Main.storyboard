@@ -721,6 +721,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <segue destination="MAq-n5-Sxy" kind="sheet" id="kWc-f4-iMR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -751,15 +754,15 @@
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="mQ5-dN-LP5">
+        <scene sceneID="4k6-g6-eId">
             <objects>
-                <viewController id="5TT-0o-yeD" sceneMemberID="viewController">
-                    <view key="view" id="FH7-ub-Fx4">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                <viewController id="MAq-n5-Sxy" customClass="BTViewController" customModule="constantId" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="usq-NH-0DM">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q22-di-NAj">
-                                <rect key="frame" x="76" y="110" width="298" height="81"/>
+                                <rect key="frame" x="91" y="109" width="298" height="81"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KB0-dh-tO5">
                                         <rect key="frame" x="0.0" y="59" width="298" height="22"/>
@@ -775,17 +778,23 @@
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jOM-gd-4xc">
+                                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wj9-Pp-XG3">
                                                 <rect key="frame" x="148" y="0.0" width="150" height="22"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="sAn-yo-4YR"/>
+                                                    <constraint firstAttribute="width" constant="150" id="bzw-Vm-3lZ"/>
                                                 </constraints>
-                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="jSj-WX-iDo">
+                                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="baq-ZC-mBb">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                </textFieldCell>
-                                            </textField>
+                                                    <allowedInputSourceLocales>
+                                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                                    </allowedInputSourceLocales>
+                                                </secureTextFieldCell>
+                                                <connections>
+                                                    <action selector="enterPassword:" target="MAq-n5-Sxy" id="Uxh-5h-ldN"/>
+                                                </connections>
+                                            </secureTextField>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="9y4-TA-5DC" firstAttribute="centerY" secondItem="KB0-dh-tO5" secondAttribute="centerY" id="gHY-Nj-Zlk"/>
@@ -807,23 +816,29 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="140" id="z01-oU-j1D"/>
                                                 </constraints>
-                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Enter Password Again" id="ThB-hl-K76">
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Confirm Password" id="ThB-hl-K76">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4Cb-ZM-g1D">
+                                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ATb-Oc-lEB">
                                                 <rect key="frame" x="148" y="0.0" width="150" height="22"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="tZO-O3-CMw"/>
+                                                    <constraint firstAttribute="width" constant="150" id="CWK-MD-Ubl"/>
                                                 </constraints>
-                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="xfo-wi-eKF">
+                                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="h95-mh-xWc">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                </textFieldCell>
-                                            </textField>
+                                                    <allowedInputSourceLocales>
+                                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                                    </allowedInputSourceLocales>
+                                                    <connections>
+                                                        <action selector="enterPassword:" target="MAq-n5-Sxy" id="81Q-Gq-6N3"/>
+                                                    </connections>
+                                                </secureTextFieldCell>
+                                            </secureTextField>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="4NH-c4-dr1" firstAttribute="centerY" secondItem="4aM-an-qDG" secondAttribute="centerY" id="VQL-Jq-Sn4"/>
@@ -846,6 +861,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="confirmButton:" target="MAq-n5-Sxy" id="phL-kk-Krq"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -863,16 +881,32 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="feF-Sj-fjO">
+                                <rect key="frame" x="229" y="40" width="96" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="YrF-No-LLp">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="testField:" target="MAq-n5-Sxy" id="chs-x2-CPG"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="q22-di-NAj" firstAttribute="centerY" secondItem="FH7-ub-Fx4" secondAttribute="centerY" id="dxP-yp-LuL"/>
-                            <constraint firstItem="q22-di-NAj" firstAttribute="centerX" secondItem="FH7-ub-Fx4" secondAttribute="centerX" id="xUq-k5-rg7"/>
+                            <constraint firstItem="q22-di-NAj" firstAttribute="centerY" secondItem="usq-NH-0DM" secondAttribute="centerY" constant="0.5" id="CT5-vd-qOq"/>
+                            <constraint firstItem="q22-di-NAj" firstAttribute="centerX" secondItem="usq-NH-0DM" secondAttribute="centerX" id="zbG-dE-w9j"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmPassword" destination="ATb-Oc-lEB" id="Hd0-aP-7CQ"/>
+                        <outlet property="enterPassword" destination="Wj9-Pp-XG3" id="uxG-9S-WYe"/>
+                    </connections>
                 </viewController>
-                <customObject id="Fkv-zu-zsF" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="iJk-Yd-hWQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="664" y="655"/>
+            <point key="canvasLocation" x="723" y="655"/>
         </scene>
     </scenes>
 </document>

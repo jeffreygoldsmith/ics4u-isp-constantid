@@ -37,12 +37,4 @@ class ViewController: NSViewController
         }
         
     }
-    
-    @IBAction func Reset(_ sender: Any)
-    {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        
-        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("nextView") as NextViewController
-        self.presentViewController(nextViewController, animated:true, completion:nil)
-    }
 }
