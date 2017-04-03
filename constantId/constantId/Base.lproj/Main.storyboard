@@ -778,12 +778,12 @@
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wj9-Pp-XG3">
+                                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pb5-J6-SRO">
                                                 <rect key="frame" x="148" y="0.0" width="150" height="22"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="bzw-Vm-3lZ"/>
+                                                    <constraint firstAttribute="width" constant="150" id="LrR-Kc-raq"/>
                                                 </constraints>
-                                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="baq-ZC-mBb">
+                                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="Uhq-fi-pK7">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -792,7 +792,7 @@
                                                     </allowedInputSourceLocales>
                                                 </secureTextFieldCell>
                                                 <connections>
-                                                    <action selector="enterPassword:" target="MAq-n5-Sxy" id="Uxh-5h-ldN"/>
+                                                    <action selector="confirmPassword:" target="MAq-n5-Sxy" id="HXk-eE-PbS"/>
                                                 </connections>
                                             </secureTextField>
                                         </subviews>
@@ -822,22 +822,22 @@
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ATb-Oc-lEB">
+                                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yur-2k-Lkh">
                                                 <rect key="frame" x="148" y="0.0" width="150" height="22"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="CWK-MD-Ubl"/>
+                                                    <constraint firstAttribute="width" constant="150" id="aKe-BG-nFZ"/>
                                                 </constraints>
-                                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="h95-mh-xWc">
+                                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="EB4-Bi-5wf">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <allowedInputSourceLocales>
                                                         <string>NSAllRomanInputSourcesLocaleIdentifier</string>
                                                     </allowedInputSourceLocales>
-                                                    <connections>
-                                                        <action selector="enterPassword:" target="MAq-n5-Sxy" id="81Q-Gq-6N3"/>
-                                                    </connections>
                                                 </secureTextFieldCell>
+                                                <connections>
+                                                    <action selector="enterPassword:" target="MAq-n5-Sxy" id="wV1-MG-7e4"/>
+                                                </connections>
                                             </secureTextField>
                                         </subviews>
                                         <constraints>
@@ -881,28 +881,12 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="feF-Sj-fjO">
-                                <rect key="frame" x="229" y="40" width="96" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="YrF-No-LLp">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <connections>
-                                    <action selector="testField:" target="MAq-n5-Sxy" id="chs-x2-CPG"/>
-                                </connections>
-                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="q22-di-NAj" firstAttribute="centerY" secondItem="usq-NH-0DM" secondAttribute="centerY" constant="0.5" id="CT5-vd-qOq"/>
                             <constraint firstItem="q22-di-NAj" firstAttribute="centerX" secondItem="usq-NH-0DM" secondAttribute="centerX" id="zbG-dE-w9j"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="confirmPassword" destination="ATb-Oc-lEB" id="Hd0-aP-7CQ"/>
-                        <outlet property="enterPassword" destination="Wj9-Pp-XG3" id="uxG-9S-WYe"/>
-                    </connections>
                 </viewController>
                 <customObject id="iJk-Yd-hWQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

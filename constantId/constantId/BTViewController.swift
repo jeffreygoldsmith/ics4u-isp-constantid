@@ -17,10 +17,11 @@ class BTViewController: NSViewController {
     
     
     @IBAction func enterPassword(_ sender: Any) {
-        print("Hi")
+        print("Enter password")
     }
-    @IBAction func testField(_ sender: Any) {
-        print("Hi")
+    
+    @IBAction func confirmPassword(_ sender: Any) {
+        print("Confirm password")
     }
     
     
