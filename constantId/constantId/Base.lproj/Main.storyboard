@@ -778,12 +778,12 @@
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pb5-J6-SRO">
+                                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="22g-j5-Zn9" customClass="VerifiedSecureTextField" customModule="constantId" customModuleProvider="target">
                                                 <rect key="frame" x="148" y="0.0" width="150" height="22"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="LrR-Kc-raq"/>
+                                                    <constraint firstAttribute="width" constant="150" id="823-sK-b2P"/>
                                                 </constraints>
-                                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="Uhq-fi-pK7">
+                                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="XZ7-db-p7S">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -791,9 +791,6 @@
                                                         <string>NSAllRomanInputSourcesLocaleIdentifier</string>
                                                     </allowedInputSourceLocales>
                                                 </secureTextFieldCell>
-                                                <connections>
-                                                    <action selector="confirmPassword:" target="MAq-n5-Sxy" id="HXk-eE-PbS"/>
-                                                </connections>
                                             </secureTextField>
                                         </subviews>
                                         <constraints>
@@ -822,12 +819,12 @@
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yur-2k-Lkh">
+                                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9kT-aM-Vgs" customClass="VerifiedSecureTextField" customModule="constantId" customModuleProvider="target">
                                                 <rect key="frame" x="148" y="0.0" width="150" height="22"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="aKe-BG-nFZ"/>
+                                                    <constraint firstAttribute="width" constant="150" id="LBk-4r-ynF"/>
                                                 </constraints>
-                                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="EB4-Bi-5wf">
+                                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="xz5-ws-RdN">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -835,9 +832,6 @@
                                                         <string>NSAllRomanInputSourcesLocaleIdentifier</string>
                                                     </allowedInputSourceLocales>
                                                 </secureTextFieldCell>
-                                                <connections>
-                                                    <action selector="enterPassword:" target="MAq-n5-Sxy" id="wV1-MG-7e4"/>
-                                                </connections>
                                             </secureTextField>
                                         </subviews>
                                         <constraints>
@@ -887,6 +881,9 @@
                             <constraint firstItem="q22-di-NAj" firstAttribute="centerX" secondItem="usq-NH-0DM" secondAttribute="centerX" id="zbG-dE-w9j"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="enterPassword" destination="22g-j5-Zn9" id="GFj-qX-NCA"/>
+                    </connections>
                 </viewController>
                 <customObject id="iJk-Yd-hWQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,22 +8,12 @@
 
 import Cocoa
 
-class BTViewController: NSViewController {
+class BTViewController: NSViewController, NSTextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-    }
-    
-    
-    @IBAction func enterPassword(_ sender: Any) {
-        print("Enter password")
-    }
-    
-    @IBAction func confirmPassword(_ sender: Any) {
-        print("Confirm password")
-    }
-    
+    }    
     
     @IBAction func confirmButton(_ sender: Any)
     {

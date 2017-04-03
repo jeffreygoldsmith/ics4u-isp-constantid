@@ -16,6 +16,7 @@
 		006A183B1E51F779004E66C6 /* constantIdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A183A1E51F779004E66C6 /* constantIdTests.swift */; };
 		006A18461E51F779004E66C6 /* constantIdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A18451E51F779004E66C6 /* constantIdUITests.swift */; };
 		00BFC2F51E91D05B00A1D6D4 /* BTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BFC2F41E91D05B00A1D6D4 /* BTViewController.swift */; };
+		00BFC2F71E92C8C100A1D6D4 /* VerifiedSecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BFC2F61E92C8C100A1D6D4 /* VerifiedSecureTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		006A18451E51F779004E66C6 /* constantIdUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constantIdUITests.swift; sourceTree = "<group>"; };
 		006A18471E51F779004E66C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00BFC2F41E91D05B00A1D6D4 /* BTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTViewController.swift; sourceTree = "<group>"; };
+		00BFC2F61E92C8C100A1D6D4 /* VerifiedSecureTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifiedSecureTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				006A18281E51F779004E66C6 /* AppDelegate.swift */,
 				006A182A1E51F779004E66C6 /* ViewController.swift */,
 				00BFC2F41E91D05B00A1D6D4 /* BTViewController.swift */,
+				00BFC2F61E92C8C100A1D6D4 /* VerifiedSecureTextField.swift */,
 				006A182C1E51F779004E66C6 /* Assets.xcassets */,
 				006A182E1E51F779004E66C6 /* Main.storyboard */,
 				006A18311E51F779004E66C6 /* Info.plist */,
@@ -268,6 +271,7 @@
 				006A182B1E51F779004E66C6 /* ViewController.swift in Sources */,
 				0014AA321E5F70C500A8CFF5 /* KeyTracking.swift in Sources */,
 				006A18291E51F779004E66C6 /* AppDelegate.swift in Sources */,
+				00BFC2F71E92C8C100A1D6D4 /* VerifiedSecureTextField.swift in Sources */,
 				005FFF111E646AEE00BD2BA0 /* KeyTiming.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
