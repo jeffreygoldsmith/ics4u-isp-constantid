@@ -8,15 +8,47 @@
 
 import Cocoa
 
-class BTViewController: NSViewController, NSTextFieldDelegate {
+var KeyTracker = KeyTiming()
+var enterCount = 0
+var labelText = "Enter your password \(3 - enterCount) times."
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
-    }    
+class BTViewController: NSViewController, NSTextFieldDelegate {
     
-    @IBAction func confirmButton(_ sender: Any)
+    @IBOutlet weak var passwordLabel: NSTextField!
+    
+    @IBAction func resetButton(_ sender: Any)
     {
         self.view.window?.close()
+        enterCount = 0
+    }
+    
+    @IBAction func passwordField(_ sender: Any)
+    {
+        print("enter")
+        if (passwordValue == password)
+        {
+            enterCount += 1
+            
+            labelText = "Enter your password \(3 - enterCount) times."
+            
+            if (enterCount == 3)
+            {
+                labelText = "Try entering your password"
+            }
+            
+            passwordLabel.stringValue = labelText
+        } else {
+            labelText = "Your password value is incorrect"
+            passwordLabel.stringValue = labelText
+        }
+    }
+    
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        KeyTracker.Initialize()
+        passwordLabel.stringValue = labelText
     }
 }

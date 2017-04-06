@@ -8,16 +8,34 @@
 
 import Cocoa
 
-var KeyTracker = KeyTiming()
+var password = ""
+var cPassword = ""
 
 class ViewController: NSViewController
 {
+    func checkPasswordValidity(password: String, cPassword: String, button: NSButton)
+    {
+        (password == cPassword && password != "" && cPassword != "") ? (button.isEnabled = true) : (button.isEnabled = false)
+    }
+    
+    @IBOutlet weak var confirmButton: NSButton!
+    @IBAction func enterPassword(_ sender: NSSecureTextField)
+    {
+        password = sender.stringValue
+        
+        checkPasswordValidity(password: password, cPassword: cPassword, button: confirmButton)
+    }
+    
+    @IBAction func confirmPassword(_ sender: NSSecureTextField)
+    {
+        cPassword = sender.stringValue
+        
+        checkPasswordValidity(password: password, cPassword: cPassword, button: confirmButton)
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        KeyTracker.Initialize()
     }
     
     override var representedObject: Any?

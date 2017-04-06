@@ -687,83 +687,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pzs-N8-Hr1">
-                                <rect key="frame" x="140" y="112" width="200" height="76"/>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q22-di-NAj">
+                                <rect key="frame" x="91" y="97" width="298" height="106"/>
                                 <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PbP-1z-ZRC">
-                                        <rect key="frame" x="36" y="59" width="129" height="17"/>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nSr-fn-CuI">
+                                        <rect key="frame" x="60" y="89" width="179" height="17"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="125" id="CxX-Ne-3Hb"/>
+                                            <constraint firstAttribute="width" constant="175" id="zJv-lP-Ivd"/>
                                         </constraints>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Enter your password and confirm using enter" id="qsd-yJ-SZx">
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Enter your password below" id="oVB-hH-kkI">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wnT-CH-aX7">
-                                        <rect key="frame" x="0.0" y="29" width="200" height="22"/>
-                                        <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="1E6-SP-qCp">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <allowedInputSourceLocales>
-                                                <string>NSAllRomanInputSourcesLocaleIdentifier</string>
-                                            </allowedInputSourceLocales>
-                                        </secureTextFieldCell>
-                                    </secureTextField>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kwt-BR-XjJ">
-                                        <rect key="frame" x="60" y="-7" width="81" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="69" id="0iX-UU-PxN"/>
-                                        </constraints>
-                                        <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zcG-kQ-LHg">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <segue destination="MAq-n5-Sxy" kind="sheet" id="kWc-f4-iMR"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="PbP-1z-ZRC" firstAttribute="centerX" secondItem="pzs-N8-Hr1" secondAttribute="centerX" id="PKx-ba-x21"/>
-                                    <constraint firstAttribute="width" constant="200" id="WvT-yz-gXI"/>
-                                    <constraint firstItem="kwt-BR-XjJ" firstAttribute="centerX" secondItem="pzs-N8-Hr1" secondAttribute="centerX" id="pg9-h0-hzV"/>
-                                </constraints>
-                                <visibilityPriorities>
-                                    <integer value="1000"/>
-                                    <integer value="1000"/>
-                                    <integer value="1000"/>
-                                </visibilityPriorities>
-                                <customSpacing>
-                                    <real value="3.4028234663852886e+38"/>
-                                    <real value="3.4028234663852886e+38"/>
-                                    <real value="3.4028234663852886e+38"/>
-                                </customSpacing>
-                            </stackView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="pzs-N8-Hr1" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="Y5t-vs-Uak"/>
-                            <constraint firstItem="pzs-N8-Hr1" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="rjt-qh-TUK"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="75" y="655"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="4k6-g6-eId">
-            <objects>
-                <viewController id="MAq-n5-Sxy" customClass="BTViewController" customModule="constantId" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="usq-NH-0DM">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q22-di-NAj">
-                                <rect key="frame" x="91" y="109" width="298" height="81"/>
-                                <subviews>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KB0-dh-tO5">
                                         <rect key="frame" x="0.0" y="59" width="298" height="22"/>
                                         <subviews>
@@ -778,7 +715,7 @@
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="22g-j5-Zn9" customClass="VerifiedSecureTextField" customModule="constantId" customModuleProvider="target">
+                                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="22g-j5-Zn9">
                                                 <rect key="frame" x="148" y="0.0" width="150" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="823-sK-b2P"/>
@@ -791,6 +728,9 @@
                                                         <string>NSAllRomanInputSourcesLocaleIdentifier</string>
                                                     </allowedInputSourceLocales>
                                                 </secureTextFieldCell>
+                                                <connections>
+                                                    <action selector="enterPassword:" target="XfG-lQ-9wD" id="b7x-cS-hZ2"/>
+                                                </connections>
                                             </secureTextField>
                                         </subviews>
                                         <constraints>
@@ -819,7 +759,7 @@
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9kT-aM-Vgs" customClass="VerifiedSecureTextField" customModule="constantId" customModuleProvider="target">
+                                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9kT-aM-Vgs">
                                                 <rect key="frame" x="148" y="0.0" width="150" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="LBk-4r-ynF"/>
@@ -832,6 +772,9 @@
                                                         <string>NSAllRomanInputSourcesLocaleIdentifier</string>
                                                     </allowedInputSourceLocales>
                                                 </secureTextFieldCell>
+                                                <connections>
+                                                    <action selector="confirmPassword:" target="XfG-lQ-9wD" id="I2U-TU-ot7"/>
+                                                </connections>
                                             </secureTextField>
                                         </subviews>
                                         <constraints>
@@ -856,13 +799,100 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="confirmButton:" target="MAq-n5-Sxy" id="phL-kk-Krq"/>
+                                            <action selector="confirmButton:" target="XfG-lQ-9wD" id="rXg-nn-nhf"/>
+                                            <segue destination="MAq-n5-Sxy" kind="sheet" id="bGs-NN-GGd"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="0dW-ec-Jxo" firstAttribute="centerX" secondItem="q22-di-NAj" secondAttribute="centerX" id="Jkd-Z5-Lfn"/>
-                                    <constraint firstAttribute="width" constant="298" id="Rmc-q0-yKS"/>
+                                    <constraint firstItem="nSr-fn-CuI" firstAttribute="centerX" secondItem="q22-di-NAj" secondAttribute="centerX" id="Uez-YL-teg"/>
+                                    <constraint firstAttribute="width" constant="298" id="z2Y-JY-WdB"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="q22-di-NAj" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="GK9-qO-6iM"/>
+                            <constraint firstItem="q22-di-NAj" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="KZ7-r2-6gh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="confirmButton" destination="0dW-ec-Jxo" id="IdH-a1-dbt"/>
+                        <outlet property="confirmButton1" destination="0dW-ec-Jxo" id="1eI-MA-vRm"/>
+                        <outlet property="confirmPassword" destination="9kT-aM-Vgs" id="OWx-cf-hOU"/>
+                        <outlet property="enterPassword" destination="22g-j5-Zn9" id="EHS-3I-mXK"/>
+                    </connections>
+                </viewController>
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="655"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4k6-g6-eId">
+            <objects>
+                <viewController id="MAq-n5-Sxy" customClass="BTViewController" customModule="constantId" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="usq-NH-0DM">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pzs-N8-Hr1">
+                                <rect key="frame" x="140" y="104" width="200" height="93"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PbP-1z-ZRC">
+                                        <rect key="frame" x="36" y="59" width="129" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="125" id="CxX-Ne-3Hb"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Enter your password 3 times." id="qsd-yJ-SZx">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wnT-CH-aX7" customClass="VerifiedSecureTextField" customModule="constantId" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="29" width="200" height="22"/>
+                                        <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="1E6-SP-qCp">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <allowedInputSourceLocales>
+                                                <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                            </allowedInputSourceLocales>
+                                        </secureTextFieldCell>
+                                        <connections>
+                                            <action selector="passwordField:" target="MAq-n5-Sxy" id="CDt-HA-uea"/>
+                                        </connections>
+                                    </secureTextField>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kwt-BR-XjJ">
+                                        <rect key="frame" x="60" y="-7" width="81" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="69" id="0iX-UU-PxN"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zcG-kQ-LHg">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="resetButton:" target="MAq-n5-Sxy" id="JVl-WJ-SBI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="PbP-1z-ZRC" firstAttribute="centerX" secondItem="pzs-N8-Hr1" secondAttribute="centerX" id="PKx-ba-x21"/>
+                                    <constraint firstAttribute="width" constant="200" id="WvT-yz-gXI"/>
+                                    <constraint firstItem="kwt-BR-XjJ" firstAttribute="centerX" secondItem="pzs-N8-Hr1" secondAttribute="centerX" id="pg9-h0-hzV"/>
                                 </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
@@ -877,12 +907,13 @@
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="q22-di-NAj" firstAttribute="centerY" secondItem="usq-NH-0DM" secondAttribute="centerY" constant="0.5" id="CT5-vd-qOq"/>
-                            <constraint firstItem="q22-di-NAj" firstAttribute="centerX" secondItem="usq-NH-0DM" secondAttribute="centerX" id="zbG-dE-w9j"/>
+                            <constraint firstItem="pzs-N8-Hr1" firstAttribute="centerY" secondItem="usq-NH-0DM" secondAttribute="centerY" id="vJt-9w-i1P"/>
+                            <constraint firstItem="pzs-N8-Hr1" firstAttribute="centerX" secondItem="usq-NH-0DM" secondAttribute="centerX" id="wYw-Z0-UUB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="enterPassword" destination="22g-j5-Zn9" id="GFj-qX-NCA"/>
+                        <outlet property="passwordLabel" destination="PbP-1z-ZRC" id="Tp7-sM-wAu"/>
                     </connections>
                 </viewController>
                 <customObject id="iJk-Yd-hWQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

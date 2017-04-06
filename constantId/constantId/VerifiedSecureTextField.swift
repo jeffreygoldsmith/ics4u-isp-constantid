@@ -8,6 +8,8 @@
 
 import Cocoa
 
+var passwordValue = ""
+
 class VerifiedSecureTextField: NSSecureTextField {
 
     override func draw(_ dirtyRect: NSRect) {
@@ -18,5 +20,6 @@ class VerifiedSecureTextField: NSSecureTextField {
     
     override func textDidChange(_ notification: Notification) {
         Swift.print(self.stringValue)
+        passwordValue = self.stringValue
     }
 }
