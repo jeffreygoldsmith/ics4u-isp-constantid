@@ -105,9 +105,9 @@
 			children = (
 				0014AA311E5F70C500A8CFF5 /* KeyTracking.swift */,
 				005FFF101E646AEE00BD2BA0 /* KeyTiming.swift */,
+				00BFC2F41E91D05B00A1D6D4 /* BTViewController.swift */,
 				006A18281E51F779004E66C6 /* AppDelegate.swift */,
 				006A182A1E51F779004E66C6 /* ViewController.swift */,
-				00BFC2F41E91D05B00A1D6D4 /* BTViewController.swift */,
 				00BFC2F61E92C8C100A1D6D4 /* VerifiedSecureTextField.swift */,
 				006A182C1E51F779004E66C6 /* Assets.xcassets */,
 				006A182E1E51F779004E66C6 /* Main.storyboard */,

@@ -34,6 +34,7 @@ class BTViewController: NSViewController, NSTextFieldDelegate {
             if (enterCount == 3)
             {
                 labelText = "Try entering your password"
+                KeyTracker.Initialize()
             }
             
             passwordLabel.stringValue = labelText
@@ -48,7 +49,6 @@ class BTViewController: NSViewController, NSTextFieldDelegate {
     {
         super.viewDidLoad()
         
-        KeyTracker.Initialize()
         passwordLabel.stringValue = labelText
     }
 }

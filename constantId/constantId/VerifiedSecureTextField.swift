@@ -20,6 +20,7 @@ class VerifiedSecureTextField: NSSecureTextField {
     
     override func textDidChange(_ notification: Notification) {
         Swift.print(self.stringValue)
+        let date = NSDate().timeIntervalSince1970
         passwordValue = self.stringValue
     }
 }

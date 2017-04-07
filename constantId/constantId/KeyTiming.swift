@@ -33,37 +33,16 @@ class KeyTiming
     {
         print("Initializing")
         
-        for i in 97...122
+        keyDictionary = [:] // Empty array from previous password data
+        
+        let newLetterPattern = LetterPattern(average: 0, count: 0) // Empty array element
+        
+        for character in password.characters // Iterate over characters in password to create the dictionary
         {
-            let letter = UnicodeScalar(i)!
-            alphabet.append(String(letter))
-            alphabet.append(String(letter).uppercased())
+            keyDictionary["\(character)"] = newLetterPattern
         }
         
-        alphabet.append("enter")
-        alphabet.append("space")
-        
-        let newLetterPattern = LetterPattern(average: 0, count: 0)
-        
-        for firstLetter in alphabet
-        {
-            if (firstLetter != "space" && firstLetter != "enter")
-            {
-                for secondLetter in alphabet
-                {
-                    keyDictionary["\(firstLetter)-\(secondLetter)"] = newLetterPattern
-                    keyDictionary["\(firstLetter.uppercased())-\(secondLetter)"] = newLetterPattern
-                    
-                    if (keyDictionary["\(firstLetter.uppercased())-\(secondLetter.uppercased())"] != nil)
-                    {
-                    
-                    } else {
-                        keyDictionary["\(firstLetter.uppercased())-\(secondLetter.uppercased())"] = newLetterPattern
-                    }
-                }
-            }
-        }
-        print(keyDictionary)
+        print(keyDictionary) // Log
         print(keyDictionary.count)
     }
     
@@ -77,7 +56,7 @@ class KeyTiming
     
     
     //
-    // Function to get the new letter pattern to overwrite the old one in keyDictionary[---].
+    // Function to get the new letter pattern that will overwrite the old one in keyDictionary[---].
     //
     func getNewLetterPattern(letterPattern: String, initialTimestamp: Double, finalTimestamp: Double) -> LetterPattern
     {
