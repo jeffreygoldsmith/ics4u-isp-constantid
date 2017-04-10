@@ -21,7 +21,7 @@ struct Keystroke
     }
 }
 
-var timingArray : [Keystroke] = []
+var timingArray : [Keystroke] = [] // Array that contains values that will be passed to KeyTiming to be processed upon an enter press
 
 class KeyTracking: NSWindow
 {
@@ -63,7 +63,7 @@ class KeyTracking: NSWindow
             if (timingArray.count >= 2)
             {
                 Swift.print(timingArray)
-                KeyTracker.setNewLetterPattern(event: event, timingArray: timingArray)
+                KeyTracker.setNewLetterPattern(timingArray: timingArray)
                 
                 timingArray = [] // Clean the array
                 

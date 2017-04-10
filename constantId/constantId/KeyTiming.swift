@@ -37,12 +37,12 @@ class KeyTiming
         
         let newLetterPattern = LetterPattern(average: 0, count: 0) // Empty array element
         
-        for character in password.characters // Iterate over characters in password to create the dictionary
+        for character in 0...password.characters.count - 2 // Iterate over characters in password to create the dictionary
         {
-            keyDictionary["\(character)"] = newLetterPattern
+            keyDictionary["\(password[password.index(password.startIndex, offsetBy: character)])-\(password[password.index(password.startIndex, offsetBy: character + 1)])"] = newLetterPattern
         }
         
-        print(keyDictionary) // Log
+        print(keyDictionary) // Log values
         print(keyDictionary.count)
     }
     
@@ -73,8 +73,9 @@ class KeyTiming
     //
     // Function to overwrite the old letter pattern with the new one.
     //
-    func setNewLetterPattern(event: NSEvent, timingArray: [Keystroke])
+    func setNewLetterPattern(timingArray: [Keystroke])
     {
+        print(timingArray)
         for i in 0...timingArray.count - 2 // Iterate through the array of key presses
         {
             let letterPattern = "\(timingArray[i].letter)-\(timingArray[i + 1].letter)"
