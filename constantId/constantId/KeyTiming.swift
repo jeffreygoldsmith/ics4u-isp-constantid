@@ -9,6 +9,9 @@
 import Cocoa
 import Foundation
 
+//
+// Datatype for processed keystroke patterns.
+//
 struct LetterPattern
 {
     var average : Double
@@ -25,9 +28,29 @@ struct LetterPattern
     }
 }
 
-var alphabet : [String] = []
-var isDeviant = true
 
+//
+// Datatype for input keystroke patterns
+//
+struct Keystroke
+{
+    var letter : String
+    var timestamp : Double
+    
+    init(letter: String, timestamp: Double)
+    {
+        self.letter = letter
+        self.timestamp = timestamp
+    }
+}
+
+var timingArray : [Keystroke] = [] // Array that contains values that will be passed to KeyTiming to be processed upon an enter press
+var isDeviant = true // Variable to track user typing consistency
+
+
+//
+// Class to process user typing
+//
 class KeyTiming
 {
     var keyDictionary : [String : LetterPattern] = [:]

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0014AA321E5F70C500A8CFF5 /* KeyTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0014AA311E5F70C500A8CFF5 /* KeyTracking.swift */; };
 		005FFF111E646AEE00BD2BA0 /* KeyTiming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005FFF101E646AEE00BD2BA0 /* KeyTiming.swift */; };
 		006A18291E51F779004E66C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A18281E51F779004E66C6 /* AppDelegate.swift */; };
 		006A182B1E51F779004E66C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A182A1E51F779004E66C6 /* ViewController.swift */; };
@@ -37,7 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0014AA311E5F70C500A8CFF5 /* KeyTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyTracking.swift; sourceTree = "<group>"; };
 		005FFF101E646AEE00BD2BA0 /* KeyTiming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyTiming.swift; sourceTree = "<group>"; };
 		006A18251E51F779004E66C6 /* constantId.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = constantId.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		006A18281E51F779004E66C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 		006A18271E51F779004E66C6 /* constantId */ = {
 			isa = PBXGroup;
 			children = (
-				0014AA311E5F70C500A8CFF5 /* KeyTracking.swift */,
 				005FFF101E646AEE00BD2BA0 /* KeyTiming.swift */,
 				00BFC2F41E91D05B00A1D6D4 /* BTViewController.swift */,
 				00BFC2F61E92C8C100A1D6D4 /* VerifiedSecureTextField.swift */,
@@ -269,7 +266,6 @@
 			files = (
 				00BFC2F51E91D05B00A1D6D4 /* BTViewController.swift in Sources */,
 				006A182B1E51F779004E66C6 /* ViewController.swift in Sources */,
-				0014AA321E5F70C500A8CFF5 /* KeyTracking.swift in Sources */,
 				006A18291E51F779004E66C6 /* AppDelegate.swift in Sources */,
 				00BFC2F71E92C8C100A1D6D4 /* VerifiedSecureTextField.swift in Sources */,
 				005FFF111E646AEE00BD2BA0 /* KeyTiming.swift in Sources */,

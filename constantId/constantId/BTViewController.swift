@@ -36,9 +36,9 @@ class BTViewController: NSViewController, NSTextFieldDelegate {
     @IBAction func passwordField(_ sender: Any)
     {
         print("enter")
-        print(isDeviant)
         if (passwordValue == password && timingArray.count == password.characters.count)
         {
+            // Process the user password data
             if (timingArray.count > 2)
             {
                 KeyTracker.setNewLetterPattern(timingArray: timingArray)
@@ -46,6 +46,7 @@ class BTViewController: NSViewController, NSTextFieldDelegate {
             
             enterCount += 1
             
+            // Switch on how many times the user has typed in their password to determine what the label will say
             switch enterCount {
             case 0...2:
                 labelText = "Enter your password \(3 - enterCount) time(s)."
@@ -58,19 +59,12 @@ class BTViewController: NSViewController, NSTextFieldDelegate {
                 break
             }
             
-//            if (enterCount >= 3)
-//            {
-//                isDeviant ? (labelText = "You have typed your password inconsistently") : (labelText = "Try entering your password")
-//            } else {
-//                labelText = "Enter your password \(3 - enterCount) time(s)."
-//            }
-            
-            isDeviant = false
+            isDeviant = false // Reset the isDeviant value
         } else {
-            labelText = "Your password value is incorrect"
+            labelText = "Your password value is incorrect" // Display error message
         }
         
-        passwordLabel.stringValue = labelText
-        timingArray = []
+        passwordLabel.stringValue = labelText // Display updated label value
+        timingArray = [] // Reset temp array of entered characters
     }
 }
