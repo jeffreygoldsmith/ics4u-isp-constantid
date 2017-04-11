@@ -55,9 +55,11 @@ I hope to learn about creating OS X user interfaces, and learn about security th
 
 I believe that I will need some sort of networking API. I look to use the Alamofire API to solve this problem. Other than this dependency, I will only be using standard OS X APIs provided by Apple.
 
+Note from Mr. Gordon: Not sure that you will need any networking APIs – this would be a local application (in fact users may be put off by installing a program that captures keystrokes and is also network-connected). You will likely just be using the standard macOS programming APIs (Cocoa).
+
 ###Rate the personal difficulty level of this project
 
-This will be a moderately difficult project for me. The algorithm could prove challenging, depend on how accurate I wish to make it. The UI design seems fairly simplistic, but there are other possible functionalities of the project mentioned above that I could look into. For instance, I could look into how to put an apple device to sleep if Constant ID determines that the user typing is not verified. I would rate this project an 8/10 for difficulty.
+This will be a moderately difficult project for me. The algorithm could prove challenging, depend on how accurate I wish to make it. The UI design seems fairly simplistic, but there are other possible functionalities of the project mentioned above that I could look into. For instance, I could look into how to put an Apple device to sleep if Constant ID determines that the user typing is not verified. I would rate this project an 8/10 for difficulty.
 
 ###Identify what you think your biggest challenge for successfully completing this ISP will be.
 
