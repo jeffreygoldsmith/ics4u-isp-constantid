@@ -26,7 +26,7 @@ struct LetterPattern
 }
 
 var alphabet : [String] = []
-var isDeviant = false
+var isDeviant = true
 
 class KeyTiming
 {
@@ -88,7 +88,6 @@ class KeyTiming
     //
     func setNewLetterPattern(timingArray: [Keystroke])
     {
-        print(timingArray)
         for i in 0...timingArray.count - 2 // Iterate through the array of key presses
         {
             let letterPattern = "\(timingArray[i].letter)-\(timingArray[i + 1].letter)"
@@ -100,9 +99,6 @@ class KeyTiming
             {
                 isDeviant = true // We say that the user has typed the entire word inconsistently
             }
-            
-//            Swift.print(letterPattern)
-//            Swift.print(keyDictionary[letterPattern] as Any)
         }
 
         Swift.print("You typed the word \(isDeviant ? "inconsistently" : "consistently")")

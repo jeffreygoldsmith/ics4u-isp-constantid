@@ -27,6 +27,7 @@ class BTViewController: NSViewController, NSTextFieldDelegate {
     @IBAction func resetButton(_ sender: Any)
     {
         enterCount = 0
+        isDeviant = true
         labelText = "Enter your password \(3 - enterCount) time(s)."
         self.view.window?.close()
         passwordLabel.stringValue = labelText
@@ -35,26 +36,38 @@ class BTViewController: NSViewController, NSTextFieldDelegate {
     @IBAction func passwordField(_ sender: Any)
     {
         print("enter")
-        if (enterCount < 2)
-        {
-            enterCount += 1
-            labelText = "Enter your password \(3 - enterCount) time(s)."
-            passwordLabel.stringValue = labelText
-            timingArray = []
-            return
-        }
-        
+        print(isDeviant)
         if (passwordValue == password && timingArray.count == password.characters.count)
         {
-            if (timingArray.count > 1)
+            if (timingArray.count > 2)
             {
                 KeyTracker.setNewLetterPattern(timingArray: timingArray)
             }
             
+            enterCount += 1
+            
+            switch enterCount {
+            case 0...2:
+                labelText = "Enter your password \(3 - enterCount) time(s)."
+                break
+            case 3:
+                labelText = "Try entering your password"
+                break
+            default:
+                isDeviant ? (labelText = "You have typed your password inconsistently") : (labelText = "You have entered your password correctly!")
+                break
+            }
+            
+//            if (enterCount >= 3)
+//            {
+//                isDeviant ? (labelText = "You have typed your password inconsistently") : (labelText = "Try entering your password")
+//            } else {
+//                labelText = "Enter your password \(3 - enterCount) time(s)."
+//            }
+            
             isDeviant = false
-            labelText = "Try entering your password"
         } else {
-            (isDeviant) ? (labelText = "Your password was typed inconsistently") : (labelText = "Your password value is incorrect")
+            labelText = "Your password value is incorrect"
         }
         
         passwordLabel.stringValue = labelText
