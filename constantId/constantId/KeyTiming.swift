@@ -49,11 +49,11 @@ var isDeviant = true // Variable to track user typing consistency
 
 
 //
-// Class to process user typing
+// Class to process user typing and determine whether or not the user is typing the password consistently
 //
 class KeyTiming
 {
-    var keyDictionary : [String : LetterPattern] = [:]
+    var keyDictionary : [String : LetterPattern] = [:] // Array to hold processed password keystrokes
     
     init() {}
     
@@ -65,7 +65,8 @@ class KeyTiming
         
         let newLetterPattern = LetterPattern(average: 0, count: 0, standardDeviation: 0, isDeviant: true) // Empty array element
         
-        for character in 0...password.characters.count - 2 // Iterate over characters in password to create the dictionary
+        // Iterate over characters in password to create the dictionary
+        for character in 0...password.characters.count - 2
         {
             keyDictionary["\(password[password.index(password.startIndex, offsetBy: character)])-\(password[password.index(password.startIndex, offsetBy: character + 1)])"] = newLetterPattern
         }
@@ -88,21 +89,30 @@ class KeyTiming
     //
     func getNewLetterPattern(letterPattern: String, initialTimestamp: Double, finalTimestamp: Double) -> LetterPattern
     {
-        let (oldAverage, oldCount, oldStandardDeviation) = getAverageAndCount(letterPattern: letterPattern)
-        let newCount = oldCount + 1
+        let (oldAverage, oldCount, oldStandardDeviation) = getAverageAndCount(letterPattern: letterPattern) // Get previous values
+        let newCount = oldCount + 1 // Increment old count to get new count
         
-        let keyStrokeFirstDifference = finalTimestamp - initialTimestamp
+        let keyStrokeFirstDifference = finalTimestamp - initialTimestamp // Find the length of time in between the keystroke
         
-        let rangeUpperBound = oldAverage + oldStandardDeviation
-        let rangeLowerBound = oldAverage - oldStandardDeviation
+        let rangeUpperBound = oldAverage + oldStandardDeviation // Find the upper bound of deviancy
+        let rangeLowerBound = oldAverage - oldStandardDeviation // Find the lower bound of deviancy
         
         let isLetterPatternDeviant = (keyStrokeFirstDifference > rangeUpperBound || keyStrokeFirstDifference < rangeLowerBound)
-        Swift.print(isLetterPatternDeviant)
+        Swift.print(isLetterPatternDeviant) // Boolean value to track whether or not this keystroke was deviant
         
-        let newStandardDeviation = sqrt(((oldStandardDeviation * oldCount) + pow(keyStrokeFirstDifference, 2)) / newCount)
-        let newAverage = (oldAverage * oldCount + keyStrokeFirstDifference) / newCount
+        let newStandardDeviation = sqrt(((oldStandardDeviation * oldCount) + pow(keyStrokeFirstDifference, 2)) / newCount) // Re-calculated standard deviation value
+        let newAverage = (oldAverage * oldCount + keyStrokeFirstDifference) / newCount // Re-calculated average time value
         
-        return (enterCount < 2) ? LetterPattern(average: newAverage, count: newCount, standardDeviation: newStandardDeviation, isDeviant: isLetterPatternDeviant) : LetterPattern(average: oldAverage, count: newCount, standardDeviation: oldStandardDeviation, isDeviant: isLetterPatternDeviant)
+        var pattern : LetterPattern
+        
+        if (enterCount < 2)
+        {
+            pattern = LetterPattern(average: newAverage, count: newCount, standardDeviation: newStandardDeviation, isDeviant: isLetterPatternDeviant) // LetterPattern value that updates average and standard deviation values
+        } else {
+            pattern = LetterPattern(average: oldAverage, count: newCount, standardDeviation: oldStandardDeviation, isDeviant: isLetterPatternDeviant) // LetterPattern that does not update average and standard deviation values
+        }
+        
+        return pattern
     }
     
     
@@ -111,11 +121,12 @@ class KeyTiming
     //
     func setNewLetterPattern(timingArray: [Keystroke])
     {
-        for i in 0...timingArray.count - 2 // Iterate through the array of key presses
+        // Iterate through the array of key presses
+        for i in 0...timingArray.count - 2
         {
-            let letterPattern = "\(timingArray[i].letter)-\(timingArray[i + 1].letter)"
-            let newLetterPattern = getNewLetterPattern(letterPattern: letterPattern, initialTimestamp: timingArray[i].timestamp, finalTimestamp: timingArray[i + 1].timestamp)
-            keyDictionary[letterPattern] = newLetterPattern
+            let letterPattern = "\(timingArray[i].letter)-\(timingArray[i + 1].letter)" // Create letter pattern string to index keyDictionary
+            let newLetterPattern = getNewLetterPattern(letterPattern: letterPattern, initialTimestamp: timingArray[i].timestamp, finalTimestamp: timingArray[i + 1].timestamp) // Get the new letter pattern to overwrite the old one
+            keyDictionary[letterPattern] = newLetterPattern // Overwrite the old pattern with the new one
             
             // If one of the letters has been typed inconsistently
             if ((keyDictionary[letterPattern]?.isDeviant)! == true)
@@ -124,6 +135,6 @@ class KeyTiming
             }
         }
 
-        Swift.print("You typed the word \(isDeviant ? "inconsistently" : "consistently")")
+        Swift.print("You typed the word \(isDeviant ? "inconsistently" : "consistently")") // Log
     }
 }

@@ -8,11 +8,14 @@
 
 import Cocoa
 
-var password = ""
-var cPassword = ""
+var password = "" // First stage password string value
+var cPassword = "" // First stage confirm password string value
 
 class ViewController: NSViewController
 {
+    //
+    // Function to check password validity and enable or disable the 'confirm' button based on those results.
+    //
     func checkPasswordValidity(password: String, cPassword: String, button: NSButton)
     {
         (password == cPassword && password != "" && cPassword != "") ? (button.isEnabled = true) : (button.isEnabled = false)

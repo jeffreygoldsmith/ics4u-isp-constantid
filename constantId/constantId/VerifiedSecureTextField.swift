@@ -9,7 +9,7 @@
 import Cocoa
 import Foundation
 
-var passwordValue = ""
+var passwordValue = "" // Second stage password value
 
 class VerifiedSecureTextField: NSSecureTextField {
 
@@ -20,8 +20,8 @@ class VerifiedSecureTextField: NSSecureTextField {
     }
     
     override func textDidChange(_ notification: Notification) {
-        let date = NSDate().timeIntervalSince1970
-        passwordValue = self.stringValue
+        let date = NSDate().timeIntervalSince1970 // Timestamp value for processing
+        passwordValue = self.stringValue // Password value
         
         // If there is a password value append the letter value to the array of letters
         if (passwordValue.characters.count > 0)

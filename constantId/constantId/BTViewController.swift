@@ -18,14 +18,15 @@ class BTViewController: NSViewController, NSTextFieldDelegate {
     {
         super.viewDidLoad()
         
-        KeyTracker.Initialize()
-        passwordLabel.stringValue = labelText
+        KeyTracker.Initialize() // Initialize KeyTracker() class
+        passwordLabel.stringValue = labelText // Set initial value for label text
     }
     
     @IBOutlet weak var passwordLabel: NSTextField!
     
     @IBAction func resetButton(_ sender: Any)
     {
+        // Reset values to intial state and segue back to main view
         enterCount = 0
         isDeviant = true
         labelText = "Enter your password \(3 - enterCount) time(s)."
@@ -35,7 +36,9 @@ class BTViewController: NSViewController, NSTextFieldDelegate {
     
     @IBAction func passwordField(_ sender: Any)
     {
-        print("enter")
+        print("enter") // Log
+        
+        // If the password is correct...
         if (passwordValue == password && timingArray.count == password.characters.count)
         {
             // Process the user password data
@@ -44,7 +47,7 @@ class BTViewController: NSViewController, NSTextFieldDelegate {
                 KeyTracker.setNewLetterPattern(timingArray: timingArray)
             }
             
-            enterCount += 1
+            enterCount += 1 // Increment enter count
             
             // Switch on how many times the user has typed in their password to determine what the label will say
             switch enterCount {
