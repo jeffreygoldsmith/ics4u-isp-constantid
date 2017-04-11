@@ -1,5 +1,11 @@
 # Grade 12 Computer Science ISP
 
+## How to run this program
+- Build the program
+- Enter any string as a password, and click the 'confirm' button to move to the next stage
+- Enter the password you previously entered three times as a baseline for the program
+- After these three baseline tests the program will measure how you type your password. If you type it inconsistently from the baseline tests or type it incorrectly it will notify you with the error messages "typed inconsistently" or "typed incorrectly".
+
 Overall expectations being assessed in this independent study project:
 
 * A1. 	demonstrate the ability to use different data types and expressions when creating computer programs;
