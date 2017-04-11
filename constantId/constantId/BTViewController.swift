@@ -42,7 +42,7 @@ class BTViewController: NSViewController, NSTextFieldDelegate {
         if (passwordValue == password && timingArray.count == password.characters.count)
         {
             // Process the user password data
-            if (timingArray.count > 2)
+            if (timingArray.count > 1)
             {
                 KeyTracker.setNewLetterPattern(timingArray: timingArray)
             }
