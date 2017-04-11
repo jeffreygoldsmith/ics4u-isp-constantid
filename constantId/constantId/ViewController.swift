@@ -50,8 +50,7 @@ class ViewController: NSViewController
     {
         if self.view.layer != nil
         {
-            let charcoal : CGColor = CGColor(red: 0.35, green: 0.38, blue: 0.44, alpha: 1.0)
-            self.view.layer?.backgroundColor = charcoal
+            // Set colour here
         }
         
     }

@@ -13,15 +13,20 @@ struct LetterPattern
 {
     var average : Double
     var count : Double
+    var standardDeviation : Double
+    var isDeviant : Bool
     
-    init(average: Double, count: Double)
+    init(average: Double, count: Double, standardDeviation: Double, isDeviant: Bool)
     {
         self.average = average
         self.count = count
+        self.standardDeviation = standardDeviation
+        self.isDeviant = isDeviant
     }
 }
 
 var alphabet : [String] = []
+var isDeviant = false
 
 class KeyTiming
 {
@@ -35,7 +40,7 @@ class KeyTiming
         
         keyDictionary = [:] // Empty array from previous password data
         
-        let newLetterPattern = LetterPattern(average: 0, count: 0) // Empty array element
+        let newLetterPattern = LetterPattern(average: 0, count: 0, standardDeviation: 0, isDeviant: true) // Empty array element
         
         for character in 0...password.characters.count - 2 // Iterate over characters in password to create the dictionary
         {
@@ -49,9 +54,9 @@ class KeyTiming
     //
     // Function to parce keyDictionary to get the old average and count values.
     //
-    func getAverageAndCount(letterPattern: String) -> (Double, Double)
+    func getAverageAndCount(letterPattern: String) -> (Double, Double, Double)
     {
-        return ((keyDictionary[letterPattern]?.average)!, (keyDictionary[letterPattern]?.count)!)
+        return ((keyDictionary[letterPattern]?.average)!, (keyDictionary[letterPattern]?.count)!, (keyDictionary[letterPattern]?.standardDeviation)!)
     }
     
     
@@ -60,13 +65,21 @@ class KeyTiming
     //
     func getNewLetterPattern(letterPattern: String, initialTimestamp: Double, finalTimestamp: Double) -> LetterPattern
     {
-        let (oldAverage, oldCount) = getAverageAndCount(letterPattern: letterPattern)
+        let (oldAverage, oldCount, oldStandardDeviation) = getAverageAndCount(letterPattern: letterPattern)
         let newCount = oldCount + 1
         
         let keyStrokeFirstDifference = finalTimestamp - initialTimestamp
+        
+        let rangeUpperBound = oldAverage + oldStandardDeviation
+        let rangeLowerBound = oldAverage - oldStandardDeviation
+        
+        let isLetterPatternDeviant = (keyStrokeFirstDifference > rangeUpperBound || keyStrokeFirstDifference < rangeLowerBound)
+        Swift.print(isLetterPatternDeviant)
+        
+        let newStandardDeviation = sqrt(((oldStandardDeviation * oldCount) + pow(keyStrokeFirstDifference, 2)) / newCount)
         let newAverage = (oldAverage * oldCount + keyStrokeFirstDifference) / newCount
         
-        return LetterPattern(average: newAverage, count: newCount)
+        return (enterCount < 2) ? LetterPattern(average: newAverage, count: newCount, standardDeviation: newStandardDeviation, isDeviant: isLetterPatternDeviant) : LetterPattern(average: oldAverage, count: newCount, standardDeviation: oldStandardDeviation, isDeviant: isLetterPatternDeviant)
     }
     
     
@@ -82,8 +95,16 @@ class KeyTiming
             let newLetterPattern = getNewLetterPattern(letterPattern: letterPattern, initialTimestamp: timingArray[i].timestamp, finalTimestamp: timingArray[i + 1].timestamp)
             keyDictionary[letterPattern] = newLetterPattern
             
-            Swift.print(letterPattern)
-            Swift.print(keyDictionary[letterPattern] as Any)
+            // If one of the letters has been typed inconsistently
+            if ((keyDictionary[letterPattern]?.isDeviant)! == true)
+            {
+                isDeviant = true // We say that the user has typed the entire word inconsistently
+            }
+            
+//            Swift.print(letterPattern)
+//            Swift.print(keyDictionary[letterPattern] as Any)
         }
+
+        Swift.print("You typed the word \(isDeviant ? "inconsistently" : "consistently")")
     }
 }

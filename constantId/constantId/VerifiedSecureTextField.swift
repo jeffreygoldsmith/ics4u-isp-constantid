@@ -23,10 +23,11 @@ class VerifiedSecureTextField: NSSecureTextField {
         let date = NSDate().timeIntervalSince1970
         passwordValue = self.stringValue
         
+        // If there is a password value append the letter value to the array of letters
         if (passwordValue.characters.count > 0)
         {
             let letter = "\(passwordValue[passwordValue.index(before: passwordValue.endIndex)])" // Get the most recent letter pressed
-            Swift.print(letter)
+            //Swift.print(letter)
             let currentKeystroke = Keystroke(letter: letter, timestamp: date) // Create a new keystroke variable
             timingArray.append(currentKeystroke) // Add it to the array
         }

@@ -10,7 +10,7 @@ import Cocoa
 
 var KeyTracker = KeyTiming()
 var enterCount = 0
-var labelText = "Enter your password \(3 - enterCount) times."
+var labelText = "Enter your password \(3 - enterCount) time(s)."
 
 class BTViewController: NSViewController, NSTextFieldDelegate {
     
@@ -27,7 +27,7 @@ class BTViewController: NSViewController, NSTextFieldDelegate {
     @IBAction func resetButton(_ sender: Any)
     {
         enterCount = 0
-        labelText = "Enter your password \(3 - enterCount) times."
+        labelText = "Enter your password \(3 - enterCount) time(s)."
         self.view.window?.close()
         passwordLabel.stringValue = labelText
     }
@@ -35,28 +35,29 @@ class BTViewController: NSViewController, NSTextFieldDelegate {
     @IBAction func passwordField(_ sender: Any)
     {
         print("enter")
-        if (passwordValue == password)
+        if (enterCount < 2)
         {
-            if (timingArray.count > 2)
+            enterCount += 1
+            labelText = "Enter your password \(3 - enterCount) time(s)."
+            passwordLabel.stringValue = labelText
+            timingArray = []
+            return
+        }
+        
+        if (passwordValue == password && timingArray.count == password.characters.count)
+        {
+            if (timingArray.count > 1)
             {
                 KeyTracker.setNewLetterPattern(timingArray: timingArray)
             }
             
-            enterCount += 1
-            
-            if (enterCount >= 3)
-            {
-                labelText = "Try entering your password"
-            } else {
-                labelText = "Enter your password \(3 - enterCount) times."
-            }
-            
-            passwordLabel.stringValue = labelText
+            isDeviant = false
+            labelText = "Try entering your password"
         } else {
-            labelText = "Your password value is incorrect"
-            passwordLabel.stringValue = labelText
+            (isDeviant) ? (labelText = "Your password was typed inconsistently") : (labelText = "Your password value is incorrect")
         }
         
+        passwordLabel.stringValue = labelText
         timingArray = []
     }
 }
